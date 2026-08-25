@@ -1,0 +1,751 @@
+/* =========================================================
+   RESET & BASE
+   ========================================================= */
+*,
+::before,
+::after,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  background: #fff;
+  color: #1c1e21;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+/* =========================================================
+   HEADER / NAVBAR
+   ========================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: #b42d1f;  /* vermelho original */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 12px 12px;
+  width: 100%;
+}
+
+/* Coluna esquerda */
+.header-col {
+  display: flex;
+  align-items: center;
+}
+
+.header-col--left {
+  min-width: 40px;
+}
+
+.header-col--center {
+  flex: 1;
+  justify-content: center;
+  gap: 12px;
+}
+
+.header-col--right {
+  min-width: 40px;
+  justify-content: flex-end;
+}
+
+/* Marca SALUD */
+.header-brand {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 48px;
+  letter-spacing: 0.02em;
+}
+
+/* Botão hamburguer */
+.hamburger-btn {
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.hamburger-btn:hover {
+  opacity: 0.75;
+}
+
+/* Hamburguer: desktop = coluna esquerda, mobile = inline com brand */
+.hamburger-btn--mobile {
+  display: none;          /* oculto em desktop */
+}
+
+.header-hamburger-desktop {
+  display: flex;          /* visível em desktop */
+}
+
+/* Botão de busca */
+.search-btn {
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.search-btn:hover {
+  opacity: 0.75;
+}
+
+/* =========================================================
+   HERO / ARTICLE MAIN
+   ========================================================= */
+.article-main {
+  width: 100%;
+  padding: 2% 20% 6% 20%;
+}
+
+.article-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Bloco do título principal */
+.article-title-block {
+  margin-bottom: 16px;
+}
+
+.article-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: left;
+  color: #1c1e21;
+}
+
+.title-urgente {
+  color: #a10000;
+}
+
+/* Subtítulo vermelho */
+.article-subtitle-block {
+  margin-bottom: 16px;
+}
+
+.article-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 48px;
+  text-align: left;
+  color: #8b0000;
+}
+
+/* Autor */
+.article-meta-author {
+  margin-bottom: 0;
+}
+
+.article-author {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #1c1e21;
+}
+
+/* Data */
+.article-meta-date {
+  margin-top: 6px;
+}
+
+.article-date {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #989898;
+}
+
+/* =========================================================
+   VÍDEO (VSL Player)
+   ========================================================= */
+.video-wrapper {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.video-placeholder {
+  position: relative;
+  width: 100%;
+  /* Proporção 16:9 */
+  padding-top: 56.25%;
+  background: #111;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.video-thumbnail {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.4s;
+}
+
+/* Overlay com botão play */
+.video-play-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.video-play-overlay:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  transition: transform 0.3s;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+}
+
+.play-button svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));
+}
+
+/* Player real (substituído após clique) */
+.video-real-player {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 3;
+}
+
+/* =========================================================
+   CONTADOR DE ESPECTADORES
+   ========================================================= */
+.viewers-counter {
+  text-align: center;
+  margin-top: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #1c1e21;
+}
+
+.viewers-count {
+  color: #a10000;
+  font-weight: 700;
+}
+
+/* =========================================================
+   IMAGEM DE SELOS / CREDIBILIDADE
+   ========================================================= */
+.trust-image-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 32px;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+
+.trust-image {
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================================
+   SEÇÃO DE COMENTÁRIOS
+   ========================================================= */
+.comments-section {
+  width: 100%;
+  background: #efefef;
+  padding: 6% 20%;
+}
+
+.comments-container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.comments-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #1c1e21;
+  margin-bottom: 16px;
+}
+
+/* Card de comentário (estilo Facebook) */
+.fb-comment-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Linha principal do comentário */
+.fb-comment-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* Avatar */
+.fb-avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #e4e6eb;
+}
+
+.fb-avatar--small {
+  width: 36px;
+  height: 36px;
+}
+
+.fb-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Conteúdo do comentário */
+.fb-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.fb-info {
+  width: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.fb-username {
+  color: #385898;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.358;
+  text-transform: capitalize;
+  word-break: break-word;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.fb-comment-text {
+  color: #1c1e21;
+  line-height: 19.12px;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  word-break: break-word;
+}
+
+/* Linha de ações (Me gusta, Responder, Likes, Tempo) */
+.fb-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  line-height: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.fb-action-link {
+  font-weight: 400;
+  font-size: 12px;
+  color: #4267b2;
+  cursor: pointer;
+  transition: text-decoration 0.2s;
+}
+
+.fb-action-link:hover {
+  text-decoration: underline;
+}
+
+.fb-dot {
+  font-weight: 400;
+  font-size: 12px;
+  color: #1c1e21;
+}
+
+.fb-time {
+  font-weight: 400;
+  font-size: 12px;
+  color: #90949c;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.fb-likes {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #1c1e21;
+}
+
+.fb-like-icon {
+  width: 14px;
+  height: 14px;
+  display: block;
+  margin-top: -2px;
+}
+
+.fb-likes span {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Respostas aninhadas */
+.fb-replies {
+  margin-left: 48px;
+  border-left: 1px dotted #d3d6db;
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.fb-reply {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer {
+  background: #545454;
+  color: #fff;
+  padding: 24px 12px;
+  text-align: center;
+}
+
+.footer-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-inner p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #fff;
+  word-break: break-all;
+}
+
+.footer-link {
+  color: #fff;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-link:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+.footer-separator {
+  color: #fff;
+  font-size: 20px;
+}
+
+.footer-disclaimer {
+  font-size: 12px !important;
+  color: #ccc !important;
+  margin-top: 8px;
+  line-height: 1.5;
+  word-break: normal !important;
+}
+
+/* =========================================================
+   MODAL DE BUSCA
+   ========================================================= */
+.search-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1000;
+  display: none;    /* oculto por padrão */
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.search-modal.is-open {
+  display: flex;
+}
+
+.search-modal-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);
+  cursor: pointer;
+}
+
+.search-modal-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 680px;
+  background: #fff;
+  padding: 24px 20px;
+  margin-top: 80px;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  animation: slideDown 0.25s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.search-modal-close {
+  position: absolute;
+  top: 12px; right: 14px;
+  font-size: 20px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.search-modal-close:hover {
+  color: #b42d1f;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  border: 2px solid #b42d1f;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.search-submit {
+  padding: 12px 18px;
+  background: #b42d1f;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-submit:hover {
+  background: #8b0000;
+}
+
+/* =========================================================
+   ANIMAÇÕES DE ENTRADA (fadeInUp)
+   ========================================================= */
+.fadeInUp {
+  animation: fadeInUp 0.8s ease-in-out both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fadeIn {
+  animation: fadeIn 0.8s ease-in-out both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .article-main {
+    padding: 4% 10% 6% 10%;
+  }
+
+  .comments-section {
+    padding: 6% 10%;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+
+  /* Header */
+  .header-inner {
+    padding: 8px 12px;
+  }
+
+  .header-brand {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .hamburger-btn {
+    font-size: 21px;
+  }
+
+  .search-btn {
+    font-size: 21px;
+  }
+
+  /* Em mobile: ocultar coluna esquerda do header (hamburger desktop)
+     e mostrar o hamburguer inline com a marca */
+  .header-hamburger-desktop {
+    display: none;
+  }
+
+  .hamburger-btn--mobile {
+    display: flex;
+  }
+
+  /* Artigo principal */
+  .article-main {
+    padding: 8px 8px 8px 8px;
+  }
+
+  .article-title {
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  .article-subtitle {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 21px;
+  }
+
+  .article-title-block {
+    margin-bottom: 8px;
+    padding: 0 7px;
+  }
+
+  .article-subtitle-block {
+    padding: 0 7px;
+  }
+
+  .article-meta-author {
+    padding: 0 7px;
+  }
+
+  .article-meta-date {
+    padding: 0 7px;
+  }
+
+  .video-wrapper {
+    margin-top: 16px;
+  }
+
+  .play-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .trust-image {
+    width: 100%;
+  }
+
+  .trust-image-block {
+    margin-top: 13px;
+    margin-bottom: 18px;
+  }
+
+  /* Comentários */
+  .comments-section {
+    padding: 8px 8px;
+  }
+
+  .footer-inner p {
+    font-size: 10px;
+  }
+
+  .footer-link {
+    font-size: 10px;
+  }
+
+  .footer-separator {
+    font-size: 10px;
+  }
+}
