@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Salud</title>
 
+<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+<link rel="preload" href="https://scripts.converteai.net/03ccc889-e246-4eff-a982-346fd4a664fd/players/6a8df57246d6ec1c2401933f/v4/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+<link rel="preload" href="https://cdn.converteai.net/03ccc889-e246-4eff-a982-346fd4a664fd/6a8df55c107f2d3d6343fd61/main.m3u8" as="fetch">
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://license.vturb.com">
+
 <style>
   * {
     box-sizing: border-box;
@@ -21,9 +30,6 @@
     color: #171717;
   }
 
-  /* =========================
-     BARRA SUPERIOR
-     ========================= */
   .topbar {
     width: 100%;
     height: 34px;
@@ -93,9 +99,6 @@
     border-radius: 2px;
   }
 
-  /* =========================
-     CONTEÚDO PRINCIPAL
-     ========================= */
   .main {
     width: 100%;
     max-width: 700px;
@@ -148,86 +151,12 @@
     color: #9a9a9a;
   }
 
-  /* =========================
-     PLAYER
-     ========================= */
-  .player {
+  .player-wrap {
     width: 100%;
-    aspect-ratio: 16 / 9;
     margin-top: 8px;
-    background: #4b3cc4;
-    position: relative;
-    overflow: hidden;
-    color: white;
+    line-height: 0;
   }
 
-  .resume-layer {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .resume-title {
-    font-size: 20px;
-    line-height: 1.15;
-    font-weight: 700;
-    margin-bottom: 26px;
-  }
-
-  .resume-options {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 34px;
-  }
-
-  .resume-option {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 12px;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-
-  .circle {
-    width: 30px;
-    height: 30px;
-    border: 1px solid rgba(255,255,255,.85);
-    border-radius: 50%;
-    position: relative;
-    flex: 0 0 30px;
-  }
-
-  .play-circle::after {
-    content: "";
-    position: absolute;
-    left: 11px;
-    top: 7px;
-    border-left: 10px solid white;
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-  }
-
-  .restart-circle::before {
-    content: "↶";
-    position: absolute;
-    left: 5px;
-    top: 0px;
-    font-size: 24px;
-    line-height: 27px;
-    font-family: Arial, sans-serif;
-    font-weight: 400;
-  }
-
-  /* =========================
-     CONTADOR ABAIXO DO PLAYER
-     ========================= */
   .watching {
     width: 100%;
     text-align: center;
@@ -250,9 +179,6 @@
     margin-top: 4px;
   }
 
-  /* =========================
-     RESPONSIVO
-     ========================= */
   @media (max-width: 740px) {
     .topbar-inner,
     .main {
@@ -305,38 +231,8 @@
       font-size: 9px;
     }
 
-    .resume-title {
-      font-size: 18px;
-      margin-bottom: 22px;
-    }
-
-    .resume-options {
-      gap: 18px;
-    }
-
-    .resume-option {
-      gap: 7px;
-      font-size: 10px;
-    }
-
-    .circle {
-      width: 26px;
-      height: 26px;
-      flex-basis: 26px;
-    }
-
-    .play-circle::after {
-      left: 10px;
-      top: 6px;
-      border-left-width: 9px;
-      border-top-width: 6px;
-      border-bottom-width: 6px;
-    }
-
-    .restart-circle::before {
-      left: 4px;
-      top: -1px;
-      font-size: 22px;
+    .watching {
+      font-size: 11px;
     }
   }
 </style>
@@ -360,7 +256,7 @@
   </h1>
 
   <div class="subheadline">
-    Más de 15,000 personas ya han revertido su diabetes por menos de 45 días.
+    Más de 15,000 personas ya han revertido su diabetes por menos de 45 dólares.
   </div>
 
   <div class="author">
@@ -371,38 +267,41 @@
     Actualizado hace 30 minutos
   </div>
 
-  <!--
-    PLAYER VISUAL DO PRINT.
-    Quando você tiver o embed VTurb real, pode substituir APENAS
-    esta DIV .player pelo código do seu player.
-  -->
-  <section class="player">
-    <div class="resume-layer">
-      <div class="resume-title">
-        Ya has empezado a ver este vídeo
-      </div>
-
-      <div class="resume-options">
-        <div class="resume-option">
-          <span class="circle play-circle"></span>
-          <span>¿Sigues viendo?</span>
-        </div>
-
-        <div class="resume-option">
-          <span class="circle restart-circle"></span>
-          <span>¿Empezar desde el principio?</span>
-        </div>
-      </div>
-    </div>
+  <section class="player-wrap">
+    <vturb-smartplayer id="vid-6a8df57246d6ec1c2401933f" style="display: block; margin: 0 auto; width: 100%; ">
+      <div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: black;"></div>
+    </vturb-smartplayer>
+    <script type="text/javascript">
+      var s=document.createElement("script");
+      s.src="https://scripts.converteai.net/03ccc889-e246-4eff-a982-346fd4a664fd/players/6a8df57246d6ec1c2401933f/v4/player.js",
+      s.async=!0,document.head.appendChild(s);
+    </script>
   </section>
 
   <div class="watching">
-    <strong>679</strong> personas mirando ahora...
+    <strong id="watchingCount">679</strong> personas mirando ahora...
   </div>
 
 </main>
 
 <div class="bottom-line"></div>
+
+<script>
+  (function () {
+    const increments = [1, 3, 7, 9, 12, 3, 1, 4, 8, 15];
+    let current = 679;
+    let index = 0;
+    const el = document.getElementById("watchingCount");
+
+    function updateWatching() {
+      current += increments[index];
+      el.textContent = current;
+      index = (index + 1) % increments.length;
+    }
+
+    setInterval(updateWatching, 4000);
+  })();
+</script>
 
 </body>
 </html>
