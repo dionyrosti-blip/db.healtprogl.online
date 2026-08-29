@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Términos de Uso | Equilibrio Diario</title>
+<meta name="robots" content="index,follow">
+
+<style>
+:root{
+  --bg:#f6f9f7;--surface:#fff;--soft:#edf7f1;--text:#183126;--muted:#607268;
+  --primary:#1f7a4f;--primary-dark:#145b3a;--gold:#e4b448;--line:#dce8e1;
+  --shadow:0 18px 50px rgba(23,49,38,.10);--radius:22px;--max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.62}
+a{color:inherit}
+.container{width:min(calc(100% - 34px),var(--max));margin:0 auto}
+.top-note{background:#123b29;color:#fff;text-align:center;padding:9px 15px;font-size:13px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;text-decoration:none;letter-spacing:-.3px}
+.brand-mark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--soft);border:1px solid var(--line)}
+.nav-links{display:flex;align-items:center;gap:19px;font-size:14px;color:var(--muted)}
+.nav-links a{text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 23px;border:0;border-radius:14px;background:var(--primary);color:#fff;font-weight:850;text-decoration:none;cursor:pointer;box-shadow:0 10px 25px rgba(31,122,79,.18);transition:.2s}
+.btn:hover{background:var(--primary-dark);transform:translateY(-1px)}
+.btn.secondary{background:#fff;color:var(--primary-dark);border:1px solid var(--line);box-shadow:none}
+.btn.small{min-height:42px;padding:0 16px;font-size:14px}
+.hero{padding:72px 0 58px;background:radial-gradient(circle at 82% 18%,rgba(228,180,72,.20),transparent 26%),radial-gradient(circle at 7% 12%,rgba(31,122,79,.11),transparent 25%),linear-gradient(180deg,#fbfdfb,#f3f8f5);border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:58px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border:1px solid #cde3d6;background:#eef8f2;color:var(--primary-dark);border-radius:999px;font-size:13px;font-weight:850;margin-bottom:18px}
+h1,h2,h3{line-height:1.15;margin-top:0;letter-spacing:-.55px}
+h1{font-size:clamp(40px,5vw,65px);margin-bottom:20px}
+h2{font-size:clamp(30px,4vw,44px);margin-bottom:14px}
+h3{font-size:21px;margin-bottom:8px}
+.lead{font-size:19px;color:var(--muted);max-width:700px;margin-bottom:24px}
+.hero-bullets,.plain-list{list-style:none;padding:0;margin:22px 0 28px;display:grid;gap:11px}
+.hero-bullets li,.plain-list li{display:flex;gap:10px;align-items:flex-start}
+.check{flex:0 0 24px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#e4f4ea;color:var(--primary);font-weight:900;margin-top:1px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.micro{font-size:12px;color:var(--muted);margin-top:12px}
+.book-stage{min-height:500px;display:grid;place-items:center;position:relative}
+.book-stage:before{content:"";position:absolute;width:390px;height:390px;border-radius:50%;background:linear-gradient(135deg,#d7ecdf,#f5e9c7)}
+.book{width:310px;height:420px;border-radius:16px 8px 8px 16px;position:relative;z-index:2;padding:34px 28px;background:linear-gradient(155deg,rgba(255,255,255,.20),transparent 28%),linear-gradient(145deg,#1d6d48,#143f2d);color:#fff;box-shadow:0 34px 65px rgba(18,59,41,.28);transform:rotate(-4deg);border-left:12px solid #0f3424;overflow:hidden}
+.book:after{content:"";position:absolute;right:-70px;bottom:-50px;width:220px;height:220px;border:32px solid rgba(228,180,72,.24);border-radius:50%}
+.book-kicker{text-transform:uppercase;letter-spacing:2.2px;font-size:11px;opacity:.82;font-weight:850}
+.book-title{font-size:38px;line-height:1.03;margin:52px 0 16px;font-weight:950;letter-spacing:-1.2px}
+.book-sub{max-width:210px;color:#d9eee3;font-size:15px;line-height:1.5}
+.book-badge{position:absolute;left:27px;bottom:28px;padding:8px 11px;border-radius:9px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);font-size:12px;font-weight:850}
+section{padding:76px 0}
+.section-head{max-width:780px;margin:0 auto 36px;text-align:center}
+.section-head p{color:var(--muted);margin:0;font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 8px 25px rgba(30,72,50,.04)}
+.icon{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--soft);color:var(--primary);font-size:22px;margin-bottom:17px}
+.card p{color:var(--muted);margin:0}
+.soft{background:#edf7f1;border-top:1px solid #d7eade;border-bottom:1px solid #d7eade}
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.panel{background:#fff;border:1px solid var(--line);border-radius:28px;padding:34px;box-shadow:var(--shadow)}
+.chapter-list{display:grid;gap:12px}
+.chapter{display:flex;gap:14px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line)}
+.chapter:last-child{border-bottom:0}
+.chapter-num{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border-radius:10px;background:#173f2e;color:#fff;font-weight:900;font-size:13px}
+.chapter p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.notice{background:#fffaf0;border:1px solid #efddb5;color:#67572e;border-radius:16px;padding:16px;font-size:13px;margin-top:18px}
+.bonus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.bonus{position:relative;overflow:hidden}
+.bonus:after{content:"EXTRA";position:absolute;top:18px;right:-35px;width:130px;text-align:center;transform:rotate(38deg);font-size:10px;font-weight:900;letter-spacing:1.4px;color:#4c390e;background:#f6db93;padding:5px 0}
+.offer{background:#163e2d;color:#fff}
+.offer-grid{display:grid;grid-template-columns:1fr .82fr;gap:38px;align-items:center}
+.offer h2{color:#fff}
+.offer p{color:#d2e5da}
+.price-card{background:#fff;color:var(--text);border-radius:26px;padding:32px;box-shadow:0 20px 55px rgba(0,0,0,.18)}
+.price-label{color:var(--muted);font-size:14px;margin-bottom:4px}
+.price{font-size:54px;font-weight:950;letter-spacing:-2px;line-height:1}
+.price-note{color:var(--muted);font-size:13px;margin:8px 0 22px}
+.price-card .btn{width:100%;min-height:58px;font-size:17px}
+.payment-note{text-align:center;color:var(--muted);font-size:12px;margin:11px 0 0}
+.guarantee{margin-top:18px;padding:16px;background:#f4faf6;border:1px solid #d9e8df;border-radius:14px;font-size:13px;color:#466054}
+.faq{max-width:830px;margin:0 auto}
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 20px;margin-bottom:12px}
+summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:850}
+summary::-webkit-details-marker{display:none}
+details p{color:var(--muted);margin:0 0 20px;padding-right:18px}
+.disclaimer{background:#fff9ed;border:1px solid #efddb2;border-radius:18px;padding:22px;color:#69572d;font-size:13px}
+.trust-placeholder{background:#fff;border:1px dashed #a9c7b6;border-radius:16px;padding:18px;text-align:center;color:#526b5d;font-size:13px}
+.legal-wrap{max-width:900px;margin:0 auto}
+.legal-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:var(--shadow)}
+.legal-card h1{font-size:42px}
+.legal-card h2{font-size:25px;margin-top:32px}
+.legal-card p,.legal-card li{color:#53695d}
+.legal-card ul{padding-left:22px}
+.support-box{background:var(--soft);border:1px solid #d3e8da;border-radius:18px;padding:20px;margin:22px 0}
+footer{background:#102d21;color:#c9d8cf;padding:46px 0;font-size:13px}
+footer strong{color:#fff}
+footer a{color:#e2eee7}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:34px}
+.footer-links{display:flex;flex-wrap:wrap;gap:12px 18px;justify-content:flex-end;align-content:flex-start}
+.footer-links a{text-decoration:none}
+.sticky-buy{display:none}
+@media(max-width:920px){
+ .hero-grid,.split,.offer-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.book-stage{min-height:430px}
+ .nav-links a:not(.btn){display:none}.offer-grid{gap:26px}
+}
+@media(max-width:640px){
+ .container{width:min(calc(100% - 24px),var(--max))}.hero{padding:48px 0 38px}section{padding:58px 0}h1{font-size:40px}.lead{font-size:17px}
+ .cards,.bonus-grid,.footer-grid{grid-template-columns:1fr}.footer-links{justify-content:flex-start}.book{width:275px;height:380px}.book-title{font-size:34px}.book-stage{min-height:395px}
+ .nav .btn.small{display:none}.sticky-buy{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:80}.sticky-buy .btn{width:100%;box-shadow:0 14px 35px rgba(20,63,45,.30)}body{padding-bottom:76px}
+ .legal-card{padding:24px}.legal-card h1{font-size:34px}
+}
+</style>
+
+<script>
+/*
+===========================================================
+CONFIGURACIÓN RÁPIDA — CAMBIE SOLO ESTOS 3 VALORES
+===========================================================
+1) CHECKOUT_URL: pegue aquí el checkout oficial de Digistore24.
+2) SUPPORT_EMAIL: correo de soporte configurado para este dominio.
+3) DISPLAY_PRICE: debe coincidir EXACTAMENTE con Digistore24.
+
+IMPORTANTE PARA DIGISTORE24 US:
+Pegue también el código oficial "Sales Page Badge" de Digistore24
+en el bloque indicado dentro del HTML antes de solicitar aprobación.
+===========================================================
+*/
+const CHECKOUT_URL = "COLE_AQUI_SEU_CHECKOUT_DIGISTORE24";
+const SUPPORT_EMAIL = "soporte@equilibriodiario.life";
+const DISPLAY_PRICE = "US$ 37";
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".support-email").forEach(el => {
+    el.textContent = SUPPORT_EMAIL;
+    if (el.tagName === "A") el.href = "mailto:" + SUPPORT_EMAIL;
+  });
+
+  document.querySelectorAll(".display-price").forEach(el => {
+    el.textContent = DISPLAY_PRICE;
+  });
+
+  document.querySelectorAll(".js-checkout").forEach(a => {
+    a.addEventListener("click", (e) => {
+      if (!CHECKOUT_URL || CHECKOUT_URL.startsWith("COLE_")) {
+        e.preventDefault();
+        alert("Configura el enlace oficial del checkout de Digistore24 antes de publicar esta página.");
+        return;
+      }
+      try {
+        const dest = new URL(CHECKOUT_URL);
+        const current = new URLSearchParams(window.location.search);
+        current.forEach((value,key) => {
+          if (!dest.searchParams.has(key)) dest.searchParams.set(key,value);
+        });
+        a.href = dest.toString();
+      } catch(err) {
+        a.href = CHECKOUT_URL;
+      }
+    });
+  });
+});
+</script>
+
+</head>
+<body>
+<div class="top-note">Equilibrio Diario • Información legal y soporte</div>
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">🌿</span><span>Equilibrio Diario</span></a>
+    <div class="nav-links"><a href="index.html">Volver a la página principal</a></div>
+  </div>
+</header>
+<main>
+<section>
+  <div class="container legal-wrap">
+    <article class="legal-card">
+      <h1>Términos de Uso</h1>
+      <p><strong>Última actualización:</strong> 29 de agosto de 2026</p>
+      <p>Estos términos regulan el uso del sitio y del producto digital Equilibrio Diario.</p>
+      
+<h2>1. Naturaleza del producto</h2>
+<p>Equilibrio Diario es un producto digital educativo. Incluye materiales informativos y herramientas de organización sobre hábitos cotidianos, alimentación general, movimiento, descanso y planificación.</p>
+
+<h2>2. No es atención médica</h2>
+<p>El contenido no constituye diagnóstico, prescripción, tratamiento, consejo médico individual, consejo nutricional individual ni sustitución de un profesional cualificado. No utilices el material para iniciar, suspender o modificar medicamentos o tratamientos.</p>
+
+<h2>3. Uso permitido</h2>
+<p>El acceso se concede para uso personal del comprador dentro de las condiciones de acceso comunicadas al momento de la compra. No está permitido revender, redistribuir, publicar, compartir masivamente, copiar o explotar comercialmente el contenido sin autorización.</p>
+
+<h2>4. Resultados y afirmaciones de salud</h2>
+<p>No se ofrecen garantías de resultados personales, clínicos, físicos, metabólicos o de otro tipo. El producto no promete diagnosticar, prevenir, tratar, revertir o curar enfermedades ni producir cambios específicos en síntomas, glucosa, peso, presión arterial, medicamentos o marcadores clínicos. La aplicación de información educativa depende de múltiples factores individuales y las experiencias pueden variar.</p>
+
+<h2>5. Pago y entrega</h2>
+<p>El pago es procesado por Digistore24. El producto se entrega en formato digital después de la confirmación del pedido, de acuerdo con las instrucciones enviadas al comprador.</p>
+
+<h2>6. Reembolsos</h2>
+<p>Esta oferta comunica un plazo de devolución de 60 días a partir del primer pago, siempre que la configuración del producto en Digistore24 corresponda al mismo plazo. Consulta la <a href="refund.html">Política de Reembolso</a> para más información.</p>
+
+<h2>7. Propiedad intelectual</h2>
+<p>Los textos, diseños, materiales, archivos y demás contenido original del producto están protegidos por las leyes de propiedad intelectual aplicables, salvo indicación en contrario.</p>
+
+<h2>8. Cambios razonables</h2>
+<p>Podemos realizar correcciones técnicas, editoriales o de seguridad en el sitio y en el material, siempre respetando la naturaleza de lo que fue adquirido y los derechos aplicables del comprador.</p>
+
+<h2>9. Contacto</h2>
+<p>Para cuestiones de soporte relacionadas con el producto, escribe a <a class="support-email" href="mailto:soporte@equilibriodiario.life">soporte@equilibriodiario.life</a>.</p>
+
+    </article>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong>Equilibrio Diario</strong><br>
+      Producto digital educativo e informativo. No diagnostica, previene, trata ni cura enfermedades y no sustituye
+      la orientación de un médico, nutricionista u otro profesional cualificado. Los resultados individuales pueden variar.
+      <div style="margin-top:12px">Soporte: <a class="support-email" href="mailto:soporte@equilibriodiario.life">soporte@equilibriodiario.life</a></div>
+    </div>
+    <div class="footer-links">
+      <a href="privacy.html">Política de Privacidad</a>
+      <a href="terms.html">Términos de Uso</a>
+      <a href="refund.html">Reembolsos</a>
+      <a href="support.html">Soporte y Contacto</a>
+      <a href="disclaimer.html">Aviso Legal</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
